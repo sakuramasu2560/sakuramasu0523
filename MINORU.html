@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>軍師ミノル生誕38周年記念企画</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slick/slick.css">
+  <link rel="stylesheet" href="slick/slick-theme.css">
+
+  <!-- jQueryの読み込み -->
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+
+  <!-- スマホナビの表示・非表示 -->
+  <script>
+    $(function () {
+      const hum = $('#hamburger, .close')
+      const nav = $('.sp-nav')
+      hum.on('click', function () {
+        nav.toggleClass('toggle');
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <!--ヘッダー-->
+  <header class="sticky-header">
+    <h1>
+      <a href="/index.html">
+        <img src="img/イラスト47.jpg" width="50rem">
+      </a>
+    </h1>
+    <nav class="pc-nav">
+      <ul class="navi">
+
+        <li class="hover-underline"><a href="/index.html">TOP</a></li>
+        <li class="hover-underline"><a href="/MINORU.html">MINORU</a></li>
+        <li class="hover-underline"><a href="/ILLUSTRATION.html">ILLUSTRATION</a></li>
+        <li class="hover-underline"><a href="/CREDIT.html">CREDIT</a></li>
+
+      </ul>
+    </nav>
+
+    <nav class="sp-nav">
+      <ul>
+        <li class="hover-underline"><a href="/index.html">TOP</a></li>
+        <li class="hover-underline"><a href="/MINORU.html">MINORU</a></li>
+        <li class="hover-underline"><a href="/ILLUSTRATION.html">ILLUSTRATION</a></li>
+        <li class="hover-underline"><a href="/CREDIT.html">CREDIT</a></li>
+        <li class="close"><span>閉じる</span></li>
+      </ul>
+    </nav>
+
+    <div id="hamburger">
+      <span></span>
+    </div>
+  </header>
+
+  <div class="flex1">
+
+    <!--ロゴ-->
+    <div class="padding-middle">
+      <img class="logo-pc-2" src="illustration/nonoise/01_01_わさび_軍師ミノル.png" alt="軍師ミノル" title="軍師ミノル">
+    </div>
+
+    <div class="left_align">
+
+
+      <div class="text-2">
+        インターネット配信者
+      </div>
+      <div class="category_box">
+        <div class="category">♡</div>
+        <p class="name">軍師ミノル</p>
+      </div>
+
+      <p class="text-2">
+        1986年 2月 21日生<br>
+        <br>
+        仲間を決して見捨てず、いつも最小限の犠牲で戦に勝つ。<br>
+        狙いをつけた美少女の前で行き倒れ一夜をともに過ごすその計画性はとても緻密で大胆なものである。<br>
+        自然に溶け込む能力があり、プレイヤー自身も存在を忘れてしまう程だ。<br>
+        <br>
+        (Wikipediaより引用)
+      </p>
+
+    </div>
+
+
+  </div>
+
+  <!--フッター-->
+  <footer class="footer-002">
+    <a href="#">
+      <!--お好きな画像を指定してください-->
+      <p class="text">
+        ここにタイトルロゴを入れる
+      </p>
+    </a>
+    <table class="icon">
+
+      <tr>
+        <td>
+          <a href="https://twitter.com/minoru4160" class="btn1">
+            <img class="x" src="img/htomcu6y_400x400.jpg" alt="X" title="X">
+          </a>
+        </td>
+
+        <td>
+          <a href="https://www.twitch.tv/minoru04160" class="btn1">
+            <img class="x" src="img/0x0ss-85.png" alt="twitch" title="twitch">
+          </a>
+        </td>
+
+        <td>
+          <a href="https://twitter.com/@minoru_38_plan" class="btn1">
+            <img class="x" src="img/1690793255-843ce855640d5c40fa64353f8334df5d.jpg" alt="企画Xアカウント" title="企画Xアカウント">
+          </a>
+        </td>
+
+        <td>
+          <a href="https://twitter.com/Wasabi_222" class="btn1">
+            <img class="x" src="img/9743.png" alt="お問い合わせ先" title="お問い合わせ先">
+          </a>
+        </td>
+
+      </tr>
+
+    </table>
+    <p class="footer-002__copyright">イラスト制作者以外の一切の無断転載を禁じます。</p>
+  </footer>
+
+
+
+  <!--スクリプト-->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script src="js/script.js"></script>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".your-class").slick({
+        autoplay: true, //自動再生ON
+        autoplaySpeed: 2000, //切り替え時間
+        fade: true, //フェードON
+        speed: 2000,  //フェードスピード
+      });
+    });
+  </script>
+</body>
+
+</html>

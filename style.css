@@ -1,0 +1,2255 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.85);
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-blend-mode: lighten;
+
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  padding: 30px 4% 10px;
+  background-color: #dd8acf;
+  display: flex;
+  align-items: center;
+}
+
+.sticky-header {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+}
+
+footer {
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #e6e6e6;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 0 0 15px;
+  font-size: 20px;
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+}
+
+nav {
+  margin: 0 0 0 auto;
+}
+
+.hover-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-underline::after {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+
+.hover-underline:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+.sp-nav {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .pc-nav {
+    display: none;
+  }
+
+  .sp-nav {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    width: 100%;
+    background: rgba(0, 0, 0, .8);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all .2s ease-in-out;
+  }
+
+  #hamburger {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 25px;
+    margin: 0 0 0 auto;
+  }
+
+  #hamburger span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #e6e6e6;
+    transform: translateY(-50%);
+  }
+
+  #hamburger::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e6e6e6;
+  }
+
+  #hamburger::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 2px;
+    background-color: #e6e6e6;
+  }
+
+  /*スマホメニュー*/
+  .sp-nav ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .sp-nav li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sp-nav li span {
+    font-size: 15px;
+    color: #fff;
+    font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  }
+
+  .sp-nav li a,
+  .sp-nav li span {
+    display: block;
+    padding: 20px 0;
+  }
+
+  /*-閉じるアイコンー*/
+  .sp-nav .close {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .sp-nav .close::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: #fff;
+    transform: rotate(45deg);
+  }
+
+  .sp-nav .close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: #fff;
+    transform: rotate(-45deg);
+  }
+
+  .toggle {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .main-visual {
+    padding: 0 4%;
+  }
+
+  h2 {
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+.btn1 {
+  width: 21px;
+  height: 21px;
+  padding: 1em;
+}
+
+img.x {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-inline: 5px;
+  padding-block: 5px;
+  background-color: #ffffff;
+
+}
+
+
+.footer-002 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px 10px 10px;
+  background-color: #dd8acf;
+  max-width: 100%;
+
+}
+
+.footer-002__copyright {
+  margin: 0;
+  color: #ffffffb3;
+  font-weight: 200;
+  font-size: .8em;
+  padding-top: 30px;
+}
+
+.center {
+  max-width: 100%;
+}
+
+.main-1 {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.text {
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  line-height: 1;
+  text-align: center;
+  font-size: 20px;
+}
+
+.text-2 {
+  font-family: "Yu Gothic", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+  margin: auto 0 auto 0;
+}
+
+
+img.logo-pc-2 {
+  width: 500px;
+  max-width: 100%;
+}
+
+
+.category_box {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+}
+
+
+.category {
+  color: #ffffff;
+  font-size: 12.5px;
+  background-color: #dfa1d4;
+  margin: auto 0 auto 0;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  border-radius: 10px 0px 10px 0px;
+
+}
+
+.left_align {
+  text-align: left;
+  padding-left: 30px;
+  border-left: #dfa1d4 solid 3px;
+}
+
+.flex1 {
+  display: flex;
+  margin: 30px auto;
+}
+
+.name {
+  font-size: 35px;
+  font-family: "Yu Gothic";
+  font-weight: 550;
+  line-height: 0;
+  max-width: 100%;
+}
+
+.genre {
+  font-size: 20px;
+  font-family: "Orbitron", "Yu Gothic";
+  font-weight: 550;
+  line-height: 0;
+  max-width: 100%;
+}
+
+.padding-middle {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  margin: auto 0 auto 0;
+}
+
+.twitter-project {
+  max-width: 80%;
+  width: 300px;
+  height: 500px;
+  overflow: auto;
+  margin-right: 15px;
+  display: inline-block;
+
+}
+
+.twitter-minoru {
+  max-width: 80%;
+  width: 300px;
+  height: 500px;
+  overflow: auto;
+  margin-left: 15px;
+  display: inline-block;
+
+}
+
+.twitter-block {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.caption {
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ffffff;
+  color: #dd8acf;
+  display: inline-block;
+  position: relative;
+  margin-top: 100px;
+}
+
+.caption::before {
+  content: "";
+  position: absolute;
+  background: #ecb5e2;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  z-index: -1;
+
+}
+
+.caption::after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  width: 500px;
+  height: 650px;
+  top: 50%;
+  left: 50%;
+  border-radius: 5%;
+  -webkit-transform: translate(-50%, 0%);
+  z-index: -2;
+}
+
+.text-4 {
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #dfa1d4;
+  margin: auto 0 auto 0;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.text-5 {
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  line-height: 1;
+  text-shadow: 0 0 10px #ffffff;
+  text-align: center;
+  font-size: 3vw;
+  white-space: nowrap;
+  margin-top: 250px;
+}
+
+.jump {
+  position: relative;
+  background-color: #3d3d3d;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  opacity: 0.5;
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.jump:hover {
+  opacity: 1;
+}
+
+.jump-caption {
+  position: relative;
+  font-family: "Times New Roman", "游ゴシック", "arial unicode ms", sans-serif;
+  color: #ffffff;
+  font-size: 50px;
+  left: 1%;
+}
+
+.jump:hover .jump-contents {
+  position: relative;
+  animation-name: fade-in;
+  transition-property: opacity;
+  transition-property: left;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+  left: 25%;
+
+}
+
+.jump-caption span {
+  position: relative;
+  font-weight: bold;
+  font-family: "Times New Roman", "游ゴシック", "arial unicode ms", sans-serif;
+  font-size: 75px;
+
+}
+
+.jump-contents {
+  position: relative;
+  opacity: 0;
+  left: 50px;
+  top: 20px;
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  z-index: 2;
+}
+
+.jump-img {
+  position: absolute;
+  right: 5%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 200px;
+}
+
+.jump:hover .jump-img {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  opacity: 0.5;
+}
+
+.jump-sp {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+
+  .jump-pc {
+    display: none;
+  }
+
+  .jump-sp {
+    display: flex;
+    width: 100%;
+    justify-content: center
+  }
+
+  .jump-box {
+    width: 100%;
+    position: relative;
+    font-weight: bold;
+    padding-left: 0.5em;
+    cursor: pointer;
+    padding-right: 0.5em;
+    font-size: 20px;
+    color: #dd8acf;
+    text-shadow: 0 0 10px #ffffff;
+    font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  }
+
+  .jump-box::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    background: #ecb5e2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    z-index: -2;
+  }
+
+
+  .jump-box span {
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+}
+
+/***広告***/
+.advertisement-fixed {
+  opacity: 0.8;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+
+.advertisement {
+  position: relative;
+  text-align: center;
+  animation-name: advertisement-fade-in;
+  /*keyframesと紐づける*/
+  animation-duration: 3s;
+  /*3秒かけて動く*/
+  animation-iteration-count: 1;
+  /*1回限り*/
+  animation-delay: 0s;
+  /*読み込んでから2秒後に実行*/
+  animation-fill-mode: forwards;
+  /*実行後キーフレームの設定を維持*/
+  animation-timing-function: ease-in-out;
+  /*徐々に加速して減速する動き方*/
+  opacity: 0;
+  top: 0;
+}
+
+.advertisement-img {
+  width: 100%;
+}
+
+.advertisement-delete {
+  position: absolute;
+  background-color: #000000;
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  right: 5%;
+  top: 5%;
+  bottom: 0;
+  z-index: 10;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.advertisement-none {
+  display: none;
+}
+
+/* アニメーション */
+@keyframes advertisement-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/***広告おわり***/
+
+/***スライドショー***/
+
+
+.slideshow {
+  position: relative;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.slideshow>div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  bottom: 0;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #dd8acf;
+
+}
+
+.slideshow>div::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  border-left: 50px solid transparent;
+  border-bottom: 50px solid #dd8acf
+}
+
+.slideshow img {
+  position: relative;
+  margin: 0 auto;
+  width: 30%;
+}
+
+@media screen and (max-width: 640px) {
+  .slideshow img {
+    display: block;
+    width: 80%;
+
+  }
+
+  .slideshow>div::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    bottom: 0;
+    border-right: 50px solid transparent;
+    border-top: 50px solid #dd8acf;
+
+  }
+
+  .slideshow>div::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    bottom: 0;
+    border-left: 50px solid transparent;
+    border-bottom: 50px solid #dd8acf
+  }
+}
+
+/***スライドショー終わり***/
+
+/***サイドバー関連***/
+
+.sidebar {
+  display: flex;
+  position: fixed;
+  max-width: 80%;
+  z-index: 4;
+  right: 0;
+  height: calc(100vh - 100px);
+
+
+}
+
+.sidebar-pa {
+  position: fixed;
+  z-index: 4;
+  margin-top: 0;
+  height: calc(100vh - 100px);
+  right: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #f7c8ed;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px #dd8acf inset;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 1px solid #dd8acf;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 2px solid #dd8acf
+}
+
+.sidebar-pc {
+  background-color: #dd8acf;
+
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  width: 500px;
+}
+
+.sidebar-contents {
+  position: relative;
+  transition-property: opacity;
+  transition-property: text-shadow;
+  transition-duration: 0.5s;
+  opacity: 0.6;
+  height: 60px;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 5px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+
+
+}
+
+.sidebar-contents:hover {
+  opacity: 1;
+  text-shadow: 0 0 10px #000000;
+}
+
+.sidebar-right {
+  position: absolute;
+  height: 55px;
+  left: 3%;
+
+}
+
+
+.sideber-icon {
+  margin-top: 2.5px;
+  width: 50px;
+  height: 50px;
+  margin-right: 3px;
+  border-radius: 50%;
+  padding-inline: 5px;
+  padding-block: 3px;
+  background-color: #ffffff;
+}
+
+.sideber-icon-pc {
+  margin-top: 2.5px;
+  width: 50px;
+  height: 50px;
+  margin-right: 3px;
+  border-radius: 50%;
+  padding-inline: 5px;
+  padding-block: 3px;
+  background-color: #ffffff;
+}
+
+
+.sidebar-name {
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3%;
+  font-size: 1em;
+  color: #ffffff;
+
+}
+
+.hover-background {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-background::after {
+  position: absolute;
+  opacity: 0.2;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+
+.hover-background:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+
+.sidebar-close {
+  display: inline-block;
+  top: auto;
+  bottom: auto;
+  margin: auto;
+  
+  cursor: pointer;
+  z-index: 1;
+  padding-top: 30px;
+  color: #dd8acf;
+  position: relative;
+}
+
+.sidebar-close::before {
+  content: "";
+  animation: sibebar-close-ani 2s infinite;
+  top: 0;
+  right: 0;
+  left: 0;
+  cursor: pointer;
+  border: solid #dd8acf;
+  border-width: 0 0 2px 2px;
+  transform: rotate(225deg);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  margin: auto;
+  position: absolute;
+  
+}
+
+.sidebar-open {
+  display: inline-block;
+  position: fixed;
+  top: calc(50vh + 35px);
+  bottom: calc(50vh - 35px);
+  right: 0;
+  font-size: 5px;
+  margin: auto;
+  padding-top: 30px;
+  cursor: pointer;
+  color: #dd8acf;
+}
+
+.sidebar-text{
+  font-size: 1rem;
+  text-shadow: #ffffff 1px 0 10px;
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  margin-right: 10px;
+
+}
+.sidebar-open::before {
+  content: "";
+  animation: sibebar-open-ani 2s infinite;
+  top: 0;
+  right: 0;
+  left: 0;
+  cursor: pointer;
+  border: solid #dd8acf;
+  border-width: 0 0 2px 2px;
+  transform: rotate(45deg);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  margin: auto;
+  position: absolute;
+}
+
+.sidebar-z-index {
+  width: 0;
+  z-index: -30;
+}
+
+.sidebar-wrap {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .sideber-icon-pc {
+    display: none;
+  }
+}
+
+@keyframes sibebar-close-ani {
+  0% {
+    transform: rotate(225deg) translate(10px, -10px);
+  }
+
+  80% {
+    transform: rotate(225deg) translate(0, 0);
+  }
+
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes sibebar-open-ani {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+
+  80% {
+    transform: rotate(45deg) translate(-10px, 10px);
+  }
+
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
+
+/***サイドバー関連終わり***/
+
+
+/***個人ページ関連***/
+.artist-information {
+  z-index: 1;
+}
+
+.artist-name-box {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  height: 50px;
+  margin-top: 50px;
+
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+.sidebox {
+  width: 5px;
+  height: 100%;
+  background-color: #dd8acf;
+}
+
+.artist-name {
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  margin-left: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4.5vw;
+
+}
+
+.artist-link-box {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.artist-link {
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 21px;
+  height: 21px;
+  transform: translateY(-50%);
+  margin-left: 25px;
+  margin-right: 25px;
+
+}
+
+.link-icon {
+  margin-left: 5px;
+  z-index: 1;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-inline: 5px;
+  padding-block: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #dd8acf;
+
+}
+
+.illust-box-pc {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.illust {
+  display: flex;
+  width: 40%;
+  height: 70%;
+  max-width: 600px;
+  min-width: 400px;
+  margin: 0 100px 0 100px;
+  position: relative;
+
+}
+
+.illust-img-container {
+  display: flex;
+  /* フレックスボックスを使用して要素を水平に配置 */
+  align-items: center;
+  /* アイテムを垂直方向に中央揃え */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.illust-title {
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+  top: 0;
+  /* 画像の上からの距離を調整 */
+  left: 0;
+  /* 画像の左からの距離を調整 */
+  justify-content: center;
+  font-size: 2.5vw;
+  display: none;
+  white-space: nowrap;
+  min-width: 300px;
+  position: absolute;
+  transform: translateY(-100%);
+}
+
+.illust-img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.illust-img.active {
+  display: block;
+  /* activeクラスが付いている画像を表示する */
+}
+
+.illust-sidebar {
+  height: 500px;
+  border: #dd8acf solid 1px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.partition {
+  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border: #dd8acf solid 1px;
+}
+
+.atogaki-partition {
+  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border: #dd8acf solid 1px;
+}
+
+
+input[type=radio]+label:before {
+  content: "";
+  display: inline-block;
+  background-size: cover;
+  width: 100px;
+  height: 141px;
+  margin: auto;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+
+.atogaki {
+  left: 5%;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  padding-left: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-left: #dd8acf solid 5px;
+  font-size: 20px;
+  font-family: "游ゴシック", "arial unicode ms", sans-serif;
+}
+
+/***わさび***/
+input[type=radio][value="img-01"]+label:before {
+  background-image: url(illustration/resize-A4/01_01_わさび_ミカヤ_スク水.png);
+}
+
+input[type=radio][value="img-02"]+label:before {
+  background-image: url(illustration/resize-A4/01_01_わさび_リンディス_スク水.png);
+}
+
+input[type=radio][value="img-03"]+label:before {
+  background-image: url(illustration/resize-A4/01_01_わさび_赤坂美月_スク水.png);
+}
+
+input[type=radio][value="img-04"]+label:before {
+  background-image: url(illustration/resize-A4/01_02_わさび_ミカヤ_スク水.jpg);
+}
+
+input[type=radio][value="img-05"]+label:before {
+  background-image: url(illustration/resize-A4/01_02_わさび_リンディス_スク水.jpg);
+}
+
+input[type=radio][value="img-06"]+label:before {
+  background-image: url(illustration/resize-A4/01_01_わさび_軍師ミノル.png);
+}
+
+/***ばあとる***/
+input[type=radio][value="img-13"]+label:before {
+  background-image: url(illustration/resize-A4/03_01_ばあとる_スク水.png);
+}
+
+/***@バルカ＝がちゃ***/
+input[type=radio][value="img-15"]+label:before {
+  background-image: url(illustration/resize-A4/05_01_＠バルカ＝がちゃ_チルノ.png);
+}
+
+/***↑shift***/
+input[type=radio][value="img-17"]+label:before {
+  background-image: url(illustration/resize-A4/06_01_↑shift_桐生.PNG);
+}
+
+input[type=radio][value="img-18"]+label:before {
+  background-image: url(illustration/resize-A4/06_01_↑shift_真島.PNG);
+}
+
+input[type=radio][value="img-19"]+label:before {
+  background-image: url(illustration/resize-A4/06_02_↑shift_桐生＆真島.PNG);
+}
+
+/***∵そらまめ***/
+input[type=radio][value="img-23"]+label:before {
+  background-image: url(illustration/resize-A4/07_01_∵そらまめ_オーブリー.png);
+}
+
+input[type=radio][value="img-24"]+label:before {
+  background-image: url(illustration/resize-A4/07_01_∵そらまめ_オーブリー_スク水.png);
+}
+
+/***jin***/
+input[type=radio][value="img-27"]+label:before {
+  background-image: url(illustration/resize-A4/08_01_jin_ラピス.png);
+}
+
+input[type=radio][value="img-28"]+label:before {
+  background-image: url(illustration/resize-A4/08_02_jin_ラピス.png);
+}
+
+/***You(仮)。***/
+input[type=radio][value="img-31"]+label:before {
+  background-image: url(illustration/resize-A4/09_01_You\(仮\)。_ダイワスカーレット.png);
+}
+
+/***yu_up***/
+input[type=radio][value="img-33"]+label:before {
+  background-image: url(illustration/resize-A4/10_01_yu_up_赤井ほむら.PNG);
+}
+
+input[type=radio][value="img-34"]+label:before {
+  background-image: url(illustration/resize-A4/10_01_yu_up_ネフェニ―.PNG);
+}
+
+input[type=radio][value="img-35"]+label:before {
+  background-image: url(illustration/resize-A4/10_02_yu_up_赤井ほむら.PNG);
+}
+
+input[type=radio][value="img-36"]+label:before {
+  background-image: url(illustration/resize-A4/10_02_yu_up_ネフェニ―.PNG);
+}
+
+/***あっぷるマン***/
+input[type=radio][value="img-41"]+label:before {
+  background-image: url(illustration/resize-A4/11_01_あっぷるマン_千早_スク水.png);
+}
+
+input[type=radio][value="img-42"]+label:before {
+  background-image: url(illustration/resize-A4/11_02_あっぷるマン_千早_スク水.png);
+}
+
+/***あまま***/
+input[type=radio][value="img-45"]+label:before {
+  background-image: url(illustration/resize-A4/12_01_あまま_カイ.png);
+}
+
+input[type=radio][value="img-46"]+label:before {
+  background-image: url(illustration/resize-A4/12_01_あまま_アスカ.png);
+}
+
+input[type=radio][value="img-47"]+label:before {
+  background-image: url(illustration/resize-A4/12_02_あまま_カイ.png);
+}
+
+input[type=radio][value="img-48"]+label:before {
+  background-image: url(illustration/resize-A4/12_02_あまま_アスカ.png);
+}
+
+/***あまま***/
+input[type=radio][value="img-45"]+label:before {
+  background-image: url(illustration/resize-A4/12_01_あまま_カイ.png);
+}
+
+input[type=radio][value="img-46"]+label:before {
+  background-image: url(illustration/resize-A4/12_01_あまま_アスカ.png);
+}
+
+input[type=radio][value="img-47"]+label:before {
+  background-image: url(illustration/resize-A4/12_02_あまま_カイ.png);
+}
+
+input[type=radio][value="img-48"]+label:before {
+  background-image: url(illustration/resize-A4/12_02_あまま_アスカ.png);
+}
+
+/***うなむ***/
+input[type=radio][value="img-53"]+label:before {
+  background-image: url(illustration/resize-A4//13_01_うなむ_星野結箕.png);
+}
+
+input[type=radio][value="img-54"]+label:before {
+  background-image: url(illustration/resize-A4/13_01_うなむ_白石かりん.png);
+}
+
+input[type=radio][value="img-55"]+label:before {
+  background-image: url(illustration/resize-A4/13_02_うなむ_星野結箕.png);
+}
+
+input[type=radio][value="img-56"]+label:before {
+  background-image: url(illustration/resize-A4/13_02_うなむ_白石かりん.png);
+}
+
+/***オエコモバ***/
+input[type=radio][value="img-61"]+label:before {
+  background-image: url(illustration/resize-A4/14_01_オエコモバ_アグネスタキオン_スク水.png);
+}
+
+input[type=radio][value="img-62"]+label:before {
+  background-image: url(illustration/resize-A4/14_02_オエコモバ_アグネスタキオン_スク水.png);
+}
+
+/***おおば***/
+input[type=radio][value="img-65"]+label:before {
+  background-image: url(illustration/resize-A4/15_01_おおば🌿_フィオルン.png);
+}
+
+input[type=radio][value="img-66"]+label:before {
+  background-image: url(illustration/resize-A4/15_02_おおば🌿_フィオルン.png);
+}
+
+/***おかきもち***/
+input[type=radio][value="img-69"]+label:before {
+  background-image: url(illustration/resize-A4/16_01_おかきもち_リシテア_スク水.png);
+}
+
+input[type=radio][value="img-70"]+label:before {
+  background-image: url(illustration/resize-A4/16_01_おかきもち_志岐間春恵_スク水.png);
+}
+
+input[type=radio][value="img-71"]+label:before {
+  background-image: url(illustration/resize-A4/16_02_おかきもち_志岐間春恵リシテア.png);
+}
+
+/***カペリン***/
+input[type=radio][value="img-75"]+label:before {
+  background-image: url(illustration/resize-A4/18_01_カペリン_ヒシアマゾン.PNG);
+}
+
+input[type=radio][value="img-76"]+label:before {
+  background-image: url(illustration/resize-A4/18_02_カペリン_ヒシアマゾン.PNG);
+}
+
+/***カンタム***/
+input[type=radio][value="img-79"]+label:before {
+  background-image: url(illustration/resize-A4/19_01_カンタム_空条承太郎.png);
+}
+
+input[type=radio][value="img-80"]+label:before {
+  background-image: url(illustration/resize-A4/19_01_カンタム_ナツノ.png);
+}
+
+input[type=radio][value="img-81"]+label:before {
+  background-image: url(illustration/resize-A4/19_02_カンタム_空条承太郎.jpg);
+}
+
+/***ぐちのやま***/
+input[type=radio][value="img-85"]+label:before {
+  background-image: url(illustration/resize-A4/20_01_ぐちのやま_春日一番.png);
+}
+
+input[type=radio][value="img-86"]+label:before {
+  background-image: url(illustration/resize-A4/20_02_ぐちのやま_春日一番.png);
+}
+
+input[type=radio][value="img-87"]+label:before {
+  background-image: url(illustration/resize-A4/20_01_ぐちのやま_石田鉄.png);
+}
+
+/***こゆき***/
+input[type=radio][value="img-91"]+label:before {
+  background-image: url(illustration/resize-A4/21_01_こゆき_ライザ_スク水.png);
+}
+
+/***しいば***/
+input[type=radio][value="img-93"]+label:before {
+  background-image: url(illustration/resize-A4/22_01_しいば_セルフィ.png);
+}
+
+input[type=radio][value="img-94"]+label:before {
+  background-image: url(illustration/resize-A4/22_01_しいば_セルフィ_スク水.png);
+}
+
+input[type=radio][value="img-95"]+label:before {
+  background-image: url(illustration/resize-A4/22_02_しいば_セルフィ.png);
+}
+
+/***ソノオ***/
+input[type=radio][value="img-99"]+label:before {
+  background-image: url(illustration/resize-A4/23_01_ソノオ_ヒルダ＆マリアンヌ.png);
+}
+
+input[type=radio][value="img-100"]+label:before {
+  background-image: url(illustration/resize-A4/23_02_ソノオ_ヒルダ＆マリアンヌ.png);
+}
+
+/***ソロ***/
+input[type=radio][value="img-103"]+label:before {
+  background-image: url(illustration/resize-A4/24_01_ソロ_明日原ユウキ.png);
+}
+
+/***ﾀｷﾂﾎﾞ***/
+input[type=radio][value="img-105"]+label:before {
+  background-image: url(illustration/resize-A4/25_01_タキツボ_ハルト.png);
+}
+
+input[type=radio][value="img-106"]+label:before {
+  background-image: url(illustration/resize-A4/25_01_タキツボ_ラファエル.png);
+}
+
+/***ちゃんし***/
+input[type=radio][value="img-109"]+label:before {
+  background-image: url(illustration/resize-A4/26_01_ちゃんし_クロード.png);
+}
+
+input[type=radio][value="img-110"]+label:before {
+  background-image: url(illustration/resize-A4/26_02_ちゃんし_クロード.png);
+}
+
+/***しいば***/
+input[type=radio][value="img-113"]+label:before {
+  background-image: url(illustration/resize-A4/27_01_てばさき_シド.png);
+}
+
+input[type=radio][value="img-114"]+label:before {
+  background-image: url(illustration/resize-A4/27_01_てばさき_ミファー.png);
+}
+
+input[type=radio][value="img-115"]+label:before {
+  background-image: url(illustration/resize-A4/27_02_てばさき_シド.jpg);
+}
+
+/***てる***/
+input[type=radio][value="img-119"]+label:before {
+  background-image: url(illustration/resize-A4/28_01_てる_シャミア.png);
+}
+
+/***とろっくほっく***/
+input[type=radio][value="img-121"]+label:before {
+  background-image: url(illustration/resize-A4/29_01_とろっくほっく_リンク.png);
+}
+
+input[type=radio][value="img-122"]+label:before {
+  background-image: url(illustration/resize-A4//29_01_とろっくほっく_リンク_スク水.png);
+}
+
+/***ナイン（仮）***/
+input[type=radio][value="img-125"]+label:before {
+  background-image: url(illustration/resize-A4/30_01_ナイン（仮）_モニカ.png);
+}
+
+input[type=radio][value="img-126"]+label:before {
+  background-image: url(illustration/resize-A4/30_02_ナイン（仮）_モニカ.png);
+}
+
+/***ナイン（仮）***/
+input[type=radio][value="img-129"]+label:before {
+  background-image: url(illustration/resize-A4/31_01_なっつ_朝日奈葵_スク水.png);
+}
+
+input[type=radio][value="img-130"]+label:before {
+  background-image: url(illustration/resize-A4/31_01_なっつ_朝日奈葵_腐川冬子.png);
+}
+
+input[type=radio][value="img-131"]+label:before {
+  background-image: url(illustration/resize-A4/31_02_なっつ_朝日奈腐川.png);
+}
+
+/***なみさざ***/
+input[type=radio][value="img-135"]+label:before {
+  background-image: url(illustration/resize-A4/32_01_なみさざ\ _ねね子.png);
+}
+
+input[type=radio][value="img-136"]+label:before {
+  background-image: url(illustration/resize-A4/32_01_なみさざ\ _ねね子_スク水.png);
+}
+
+input[type=radio][value="img-137"]+label:before {
+  background-image: url(illustration/resize-A4/32_02_なみさざ\ _ねね子.jpg);
+}
+
+input[type=radio][value="img-138"]+label:before {
+  background-image: url(illustration/resize-A4/32_02_なみさざ\ _ねね子_スク水.jpg);
+}
+
+
+/***ふふふ***/
+input[type=radio][value="img-142"]+label:before {
+  background-image: url(illustration/resize-A4/33_01_ふふふ_インクリング_スク水.png);
+}
+
+input[type=radio][value="img-143"]+label:before {
+  background-image: url(illustration/resize-A4/33_02_ふふふ_インクリング_スク水.png);
+}
+
+
+/***ふゆぎ***/
+input[type=radio][value="img-146"]+label:before {
+  background-image: url(illustration/resize-A4/35_01_ふゆぎ_セナ.png);
+}
+
+input[type=radio][value="img-147"]+label:before {
+  background-image: url(illustration/resize-A4/35_01_ふゆぎ_ミオ.png);
+}
+
+input[type=radio][value="img-148"]+label:before {
+  background-image: url(illustration/resize-A4/35_02_ふゆぎ_セナミオ.png);
+}
+
+/***ふゆり***/
+input[type=radio][value="img-152"]+label:before {
+  background-image: url(illustration/resize-A4/34_01_ふゆり_フュリー.png);
+}
+
+input[type=radio][value="img-153"]+label:before {
+  background-image: url(illustration/resize-A4/34_02_ふゆり_フュリー.png);
+}
+
+/***めテョ***/
+input[type=radio][value="img-156"]+label:before {
+  background-image: url(illustration/resize-A4/36_01_めテョ_桜咲マキナ.png);
+}
+
+input[type=radio][value="img-157"]+label:before {
+  background-image: url(illustration/resize-A4/36_02_めテョ_桜咲マキナ.png);
+}
+
+/***やすぜろ***/
+input[type=radio][value="img-160"]+label:before {
+  background-image: url(illustration/resize-A4/37_01_やすぜろ_小太刀.png);
+}
+
+input[type=radio][value="img-161"]+label:before {
+  background-image: url(illustration/resize-A4/37_02_やすぜろ_小太刀_スク水.png);
+}
+
+/***ゆうーふ***/
+input[type=radio][value="img-164"]+label:before {
+  background-image: url(illustration/resize-A4/38_01_ゆうーふ_マキマ.png);
+}
+
+input[type=radio][value="img-165"]+label:before {
+  background-image: url(illustration/resize-A4/38_01_ゆうーふ_北野スオミ.png);
+}
+
+input[type=radio][value="img-166"]+label:before {
+  background-image: url(illustration/resize-A4/38_02_ゆうーふ_マキマ北野スオミ.png);
+}
+
+/***よか***/
+input[type=radio][value="img-170"]+label:before {
+  background-image: url(illustration/resize-A4/39_01_よか_アネット.png);
+}
+
+input[type=radio][value="img-171"]+label:before {
+  background-image: url(illustration/resize-A4/39_02_よか_アネット.jpg);
+}
+
+/***りょくちゃむ***/
+input[type=radio][value="img-174"]+label:before {
+  background-image: url(illustration/resize-A4/40_01_りょくちゃむ_森島はるか.png);
+}
+
+input[type=radio][value="img-175"]+label:before {
+  background-image: url(illustration/resize-A4/40_02_りょくちゃむ_森島はるか.jpg);
+}
+
+/***井川類***/
+input[type=radio][value="img-178"]+label:before {
+  background-image: url(illustration/resize-A4/41_01_井川類_こはね_スク水.png);
+}
+
+input[type=radio][value="img-179"]+label:before {
+  background-image: url(illustration/resize-A4/41_02_井川類_こはね_スク水.png);
+}
+
+
+
+
+input[type=radio]:checked+label::before {
+  border: 2px solid #dd8acf;
+  box-sizing: border-box;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.illust-box-sp {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .illust-box-pc {
+    display: none;
+  }
+
+  /* スマホ向けのラジオボタンを表示する */
+  .illust-box-sp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+  }
+
+  .illust {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    margin: 0 100px 0 100px;
+    position: relative;
+
+  }
+
+  input[type=radio-2]+label:before {
+    content: "";
+    display: inline-block;
+    background-size: cover;
+    width: 100px;
+    height: 141px;
+    margin: 0 auto;
+    right: 0;
+
+  }
+
+  .illust-title {
+    font-family: "游ゴシック", "arial unicode ms", sans-serif;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 5vw;
+    display: none;
+    white-space: inherit;
+    min-width: 300px;
+    position: absolute;
+    transform: translateY(-100%);
+  }
+
+
+  input[type=radio-2]:checked+label::before {
+    border: 2px solid #dd8acf;
+    box-sizing: border-box;
+  }
+
+  input[type=radio-2] {
+    display: none;
+  }
+
+  /***わさび***/
+  input[type=radio][value="img-07"]+label:before {
+    background-image: url(illustration/resize-A4/01_01_わさび_ミカヤ_スク水.png);
+  }
+
+  input[type=radio][value="img-08"]+label:before {
+    background-image: url(illustration/resize-A4/01_01_わさび_リンディス_スク水.png);
+  }
+
+  input[type=radio][value="img-09"]+label:before {
+    background-image: url(illustration/resize-A4/01_01_わさび_赤坂美月_スク水.png);
+  }
+
+  input[type=radio][value="img-10"]+label:before {
+    background-image: url(illustration/resize-A4/01_02_わさび_ミカヤ_スク水.jpg);
+  }
+
+  input[type=radio][value="img-11"]+label:before {
+    background-image: url(illustration/resize-A4/01_02_わさび_リンディス_スク水.jpg);
+  }
+
+  input[type=radio][value="img-12"]+label:before {
+    background-image: url(illustration/resize-A4/01_01_わさび_軍師ミノル.png);
+  }
+
+
+  /***ばあとる***/
+  input[type=radio][value="img-14"]+label:before {
+    background-image: url(illustration/resize-A4/03_01_ばあとる_スク水.png);
+  }
+
+  /***@バルカ＝がちゃ***/
+  input[type=radio][value="img-16"]+label:before {
+    background-image: url(illustration/resize-A4/05_01_＠バルカ＝がちゃ_チルノ.png);
+  }
+
+  /***↑shift***/
+  input[type=radio][value="img-20"]+label:before {
+    background-image: url(illustration/resize-A4/06_01_↑shift_桐生.PNG);
+  }
+
+  input[type=radio][value="img-21"]+label:before {
+    background-image: url(illustration/resize-A4/06_01_↑shift_真島.PNG);
+  }
+
+  input[type=radio][value="img-22"]+label:before {
+    background-image: url(illustration/resize-A4/06_02_↑shift_桐生＆真島.PNG);
+  }
+
+  /***∵そらまめ***/
+  input[type=radio][value="img-25"]+label:before {
+    background-image: url(illustration/resize-A4/07_01_∵そらまめ_オーブリー.png);
+  }
+
+  input[type=radio][value="img-26"]+label:before {
+    background-image: url(illustration/resize-A4/07_01_∵そらまめ_オーブリー_スク水.png);
+  }
+
+  /***jin***/
+  input[type=radio][value="img-29"]+label:before {
+    background-image: url(illustration/resize-A4/08_01_jin_ラピス.png);
+  }
+
+  input[type=radio][value="img-30"]+label:before {
+    background-image: url(illustration/resize-A4/08_02_jin_ラピス.png);
+  }
+
+  /***You(仮)。***/
+  input[type=radio][value="img-32"]+label:before {
+    background-image: url(illustration/resize-A4/09_01_You\(仮\)。_ダイワスカーレット.png);
+  }
+
+  /***yu_up***/
+  input[type=radio][value="img-37"]+label:before {
+    background-image: url(illustration/resize-A4/10_01_yu_up_赤井ほむら.PNG);
+  }
+
+  input[type=radio][value="img-38"]+label:before {
+    background-image: url(illustration/resize-A4/10_01_yu_up_ネフェニ―.PNG);
+  }
+
+  input[type=radio][value="img-39"]+label:before {
+    background-image: url(illustration/resize-A4/10_02_yu_up_赤井ほむら.PNG);
+  }
+
+  input[type=radio][value="img-40"]+label:before {
+    background-image: url(illustration/resize-A4/10_02_yu_up_ネフェニ―.PNG);
+  }
+
+  /***あっぷるマン***/
+  input[type=radio][value="img-43"]+label:before {
+    background-image: url(illustration/resize-A4/11_01_あっぷるマン_千早_スク水.png);
+  }
+
+  input[type=radio][value="img-44"]+label:before {
+    background-image: url(illustration/resize-A4/11_02_あっぷるマン_千早_スク水.png);
+  }
+
+  /***あまま***/
+  input[type=radio][value="img-49"]+label:before {
+    background-image: url(illustration/resize-A4/12_01_あまま_カイ.png);
+  }
+
+  input[type=radio][value="img-50"]+label:before {
+    background-image: url(illustration/resize-A4/12_01_あまま_アスカ.png);
+  }
+
+  input[type=radio][value="img-51"]+label:before {
+    background-image: url(illustration/resize-A4/12_02_あまま_カイ.png);
+  }
+
+  input[type=radio][value="img-52"]+label:before {
+    background-image: url(illustration/resize-A4/12_02_あまま_アスカ.png);
+  }
+
+  /***うなむ***/
+  input[type=radio][value="img-57"]+label:before {
+    background-image: url(illustration/resize-A4//13_01_うなむ_星野結箕.png);
+  }
+
+  input[type=radio][value="img-58"]+label:before {
+    background-image: url(illustration/resize-A4/13_01_うなむ_白石かりん.png);
+  }
+
+  input[type=radio][value="img-59"]+label:before {
+    background-image: url(illustration/resize-A4/13_02_うなむ_星野結箕.png);
+  }
+
+  input[type=radio][value="img-60"]+label:before {
+    background-image: url(illustration/resize-A4/13_02_うなむ_白石かりん.png);
+  }
+
+  /***オエコモバ***/
+  input[type=radio][value="img-63"]+label:before {
+    background-image: url(illustration/resize-A4/14_01_オエコモバ_アグネスタキオン_スク水.png);
+  }
+
+  input[type=radio][value="img-64"]+label:before {
+    background-image: url(illustration/resize-A4/14_02_オエコモバ_アグネスタキオン_スク水.png);
+  }
+
+  /***おおば***/
+  input[type=radio][value="img-67"]+label:before {
+    background-image: url(illustration/resize-A4/15_01_おおば🌿_フィオルン.png);
+  }
+
+  input[type=radio][value="img-68"]+label:before {
+    background-image: url(illustration/resize-A4/15_02_おおば🌿_フィオルン.png);
+  }
+
+  /***おかきもち***/
+  input[type=radio][value="img-72"]+label:before {
+    background-image: url(illustration/resize-A4/16_01_おかきもち_リシテア_スク水.png);
+  }
+
+  input[type=radio][value="img-73"]+label:before {
+    background-image: url(illustration/resize-A4/16_01_おかきもち_志岐間春恵_スク水.png);
+  }
+
+  input[type=radio][value="img-74"]+label:before {
+    background-image: url(illustration/resize-A4/16_02_おかきもち_志岐間春恵リシテア.png);
+  }
+
+  /***カペリン***/
+  input[type=radio][value="img-77"]+label:before {
+    background-image: url(illustration/resize-A4/18_01_カペリン_ヒシアマゾン.PNG);
+  }
+
+  input[type=radio][value="img-78"]+label:before {
+    background-image: url(illustration/resize-A4/18_02_カペリン_ヒシアマゾン.PNG);
+  }
+
+  /***カンタム***/
+  input[type=radio][value="img-82"]+label:before {
+    background-image: url(illustration/resize-A4/19_01_カンタム_空条承太郎.png);
+  }
+
+  input[type=radio][value="img-83"]+label:before {
+    background-image: url(illustration/resize-A4/19_01_カンタム_ナツノ.png);
+  }
+
+  input[type=radio][value="img-84"]+label:before {
+    background-image: url(illustration/resize-A4/19_02_カンタム_空条承太郎.jpg);
+  }
+
+  /***ぐちのやま***/
+  input[type=radio][value="img-88"]+label:before {
+    background-image: url(illustration/resize-A4/20_01_ぐちのやま_春日一番.png);
+  }
+
+  input[type=radio][value="img-89"]+label:before {
+    background-image: url(illustration/resize-A4/20_02_ぐちのやま_春日一番.png);
+  }
+
+  input[type=radio][value="img-90"]+label:before {
+    background-image: url(illustration/resize-A4/20_01_ぐちのやま_石田鉄.png);
+  }
+
+  /***こゆき***/
+  input[type=radio][value="img-92"]+label:before {
+    background-image: url(illustration/resize-A4/21_01_こゆき_ライザ_スク水.png);
+  }
+
+  /***しいば***/
+  input[type=radio][value="img-96"]+label:before {
+    background-image: url(illustration/resize-A4/22_01_しいば_セルフィ.png);
+  }
+
+  input[type=radio][value="img-97"]+label:before {
+    background-image: url(illustration/resize-A4/22_01_しいば_セルフィ_スク水.png);
+  }
+
+  input[type=radio][value="img-98"]+label:before {
+    background-image: url(illustration/resize-A4/22_02_しいば_セルフィ.png);
+  }
+
+  /***ソノオ***/
+  input[type=radio][value="img-101"]+label:before {
+    background-image: url(illustration/resize-A4/23_01_ソノオ_ヒルダ＆マリアンヌ.png);
+  }
+
+  input[type=radio][value="img-102"]+label:before {
+    background-image: url(illustration/resize-A4/23_02_ソノオ_ヒルダ＆マリアンヌ.png);
+  }
+
+  /***ソロ***/
+  input[type=radio][value="img-104"]+label:before {
+    background-image: url(illustration/resize-A4/24_01_ソロ_明日原ユウキ.png);
+  }
+
+  /***ﾀｷﾂﾎﾞ***/
+  input[type=radio][value="img-107"]+label:before {
+    background-image: url(illustration/resize-A4/25_01_タキツボ_ハルト.png);
+  }
+
+  input[type=radio][value="img-108"]+label:before {
+    background-image: url(illustration/resize-A4/25_01_タキツボ_ラファエル.png);
+  }
+
+  /***ちゃんし***/
+  input[type=radio][value="img-111"]+label:before {
+    background-image: url(illustration/resize-A4/26_01_ちゃんし_クロード.png);
+  }
+
+  input[type=radio][value="img-112"]+label:before {
+    background-image: url(illustration/resize-A4/26_02_ちゃんし_クロード.png);
+  }
+
+  /***しいば***/
+  input[type=radio][value="img-116"]+label:before {
+    background-image: url(illustration/resize-A4/27_01_てばさき_シド.png);
+  }
+
+  input[type=radio][value="img-117"]+label:before {
+    background-image: url(illustration/resize-A4/27_01_てばさき_ミファー.png);
+  }
+
+  input[type=radio][value="img-118"]+label:before {
+    background-image: url(illustration/resize-A4/27_02_てばさき_シド.jpg);
+  }
+
+  /***てる***/
+  input[type=radio][value="img-120"]+label:before {
+    background-image: url(illustration/resize-A4/28_01_てる_シャミア.png);
+  }
+
+  /***とろっくほっく***/
+  input[type=radio][value="img-123"]+label:before {
+    background-image: url(illustration/resize-A4/29_01_とろっくほっく_リンク.png);
+  }
+
+  input[type=radio][value="img-124"]+label:before {
+    background-image: url(illustration/resize-A4/29_01_とろっくほっく_リンク_スク水.png);
+  }
+
+  /***ナイン（仮）***/
+  input[type=radio][value="img-127"]+label:before {
+    background-image: url(illustration/resize-A4/30_01_ナイン（仮）_モニカ.png);
+  }
+
+  input[type=radio][value="img-128"]+label:before {
+    background-image: url(illustration/resize-A4/30_02_ナイン（仮）_モニカ.png);
+  }
+
+  /***ナイン（仮）***/
+  input[type=radio][value="img-127"]+label:before {
+    background-image: url(illustration/resize-A4/30_01_ナイン（仮）_モニカ.png);
+  }
+
+  input[type=radio][value="img-128"]+label:before {
+    background-image: url(illustration/resize-A4/30_02_ナイン（仮）_モニカ.png);
+  }
+
+  /***ナイン（仮）***/
+  input[type=radio][value="img-132"]+label:before {
+    background-image: url(illustration/resize-A4/31_01_なっつ_朝日奈葵_スク水.png);
+  }
+
+  input[type=radio][value="img-133"]+label:before {
+    background-image: url(illustration/resize-A4/31_01_なっつ_朝日奈葵_腐川冬子.png);
+  }
+
+  input[type=radio][value="img-134"]+label:before {
+    background-image: url(illustration/resize-A4/31_02_なっつ_朝日奈腐川.png);
+  }
+
+  /***なみさざ***/
+  input[type=radio][value="img-139"]+label:before {
+    background-image: url(illustration/resize-A4/32_01_なみさざ\ _ねね子.png);
+  }
+
+  input[type=radio][value="img-140"]+label:before {
+    background-image: url(illustration/resize-A4/32_01_なみさざ\ _ねね子_スク水.png);
+  }
+
+  input[type=radio][value="img-141"]+label:before {
+    background-image: url(illustration/resize-A4/32_02_なみさざ\ _ねね子.jpg);
+  }
+
+  input[type=radio][value="img-142"]+label:before {
+    background-image: url(illustration/resize-A4/32_02_なみさざ\ _ねね子_スク水.jpg);
+  }
+
+  /***ふふふ***/
+  input[type=radio][value="img-144"]+label:before {
+    background-image: url(illustration/resize-A4/33_01_ふふふ_インクリング_スク水.png);
+  }
+
+  input[type=radio][value="img-145"]+label:before {
+    background-image: url(illustration/resize-A4/33_02_ふふふ_インクリング_スク水.png);
+  }
+
+  /***ふゆぎ***/
+  input[type=radio][value="img-149"]+label:before {
+    background-image: url(illustration/resize-A4/35_01_ふゆぎ_セナ.png);
+  }
+
+  input[type=radio][value="img-150"]+label:before {
+    background-image: url(illustration/resize-A4/35_01_ふゆぎ_ミオ.png);
+  }
+
+  input[type=radio][value="img-151"]+label:before {
+    background-image: url(illustration/resize-A4/35_02_ふゆぎ_セナミオ.png);
+  }
+
+  /***ふゆり***/
+  input[type=radio][value="img-154"]+label:before {
+    background-image: url(illustration/resize-A4/34_01_ふゆり_フュリー.png);
+  }
+
+  input[type=radio][value="img-155"]+label:before {
+    background-image: url(illustration/resize-A4/34_02_ふゆり_フュリー.png);
+  }
+
+  /***めテョ***/
+  input[type=radio][value="img-158"]+label:before {
+    background-image: url(illustration/resize-A4/36_01_めテョ_桜咲マキナ.png);
+  }
+
+  input[type=radio][value="img-159"]+label:before {
+    background-image: url(illustration/resize-A4/36_02_めテョ_桜咲マキナ.png);
+  }
+
+  /***やすぜろ***/
+  input[type=radio][value="img-162"]+label:before {
+    background-image: url(illustration/resize-A4/37_01_やすぜろ_小太刀.png);
+  }
+
+  input[type=radio][value="img-163"]+label:before {
+    background-image: url(illustration/resize-A4/37_02_やすぜろ_小太刀_スク水.png);
+  }
+
+  /***ゆうーふ***/
+  input[type=radio][value="img-167"]+label:before {
+    background-image: url(illustration/resize-A4/38_01_ゆうーふ_マキマ.png);
+  }
+
+  input[type=radio][value="img-168"]+label:before {
+    background-image: url(illustration/resize-A4/38_01_ゆうーふ_北野スオミ.png);
+  }
+
+  input[type=radio][value="img-169"]+label:before {
+    background-image: url(illustration/resize-A4/38_02_ゆうーふ_マキマ北野スオミ.png);
+  }
+
+/***よか***/
+input[type=radio][value="img-172"]+label:before {
+  background-image: url(illustration/resize-A4/39_01_よか_アネット.png);
+}
+
+input[type=radio][value="img-173"]+label:before {
+  background-image: url(illustration/resize-A4/39_02_よか_アネット.jpg);
+}
+
+/***りょくちゃむ***/
+input[type=radio][value="img-176"]+label:before {
+  background-image: url(illustration/resize-A4/40_01_りょくちゃむ_森島はるか.png);
+}
+
+input[type=radio][value="img-177"]+label:before {
+  background-image: url(illustration/resize-A4/40_02_りょくちゃむ_森島はるか.jpg);
+}
+
+/***井川類***/
+input[type=radio][value="img-180"]+label:before {
+  background-image: url(illustration/resize-A4/41_01_井川類_こはね_スク水.png);
+}
+
+input[type=radio][value="img-181"]+label:before {
+  background-image: url(illustration/resize-A4/41_02_井川類_こはね_スク水.png);
+}
+
+
+
+
+
+
+
+
+
+}
+
+/***個人ページ関連終わり***/
+
+
+/***追従するトップへ戻るボタン***/
+#page-top {
+  position: fixed;
+  right: 5px;
+  bottom: 20px;
+  height: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transform: rotate(90deg);
+  font-size: 90%;
+  line-height: 1.5rem;
+  color: #242424;
+  padding: 0 0 0 35px;
+  border-top: solid 1px;
+}
+
+#page-top::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0px;
+  width: 15px;
+  border-top: solid 1px;
+  transform: rotate(35deg);
+  transform-origin: left top;
+}
+
+#page-top-sp {
+  display: none;
+}
+
+/***ここまで***/
+
+/***追従するトップへ戻るボタン(スマホ規格)***/
+@media screen and (max-width: 640px) {
+
+  #page-top {
+    display: none;
+  }
+
+  #page-top-sp {
+    position: fixed;
+    display: block;
+    right: 15%;
+    bottom: 10%;
+    height: 5%;
+    text-decoration: none;
+    font-weight: bold;
+    transform: rotate(90deg);
+    font-size: 90%;
+    line-height: 1.5rem;
+    color: #242424;
+    padding: 0 0 0 35px;
+    border-top: solid 1px;
+  }
+
+  #page-top-sp::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 15px;
+    border-top: solid 1px;
+    transform: rotate(35deg);
+    transform-origin: left top;
+  }
+}
+
+/***ここまで***/
+
+.anime-object-1 {
+  animation-name: fade-in;
+  /*keyframesと紐づける*/
+  animation-duration: 3s;
+  /*3秒かけて動く*/
+  animation-iteration-count: 1;
+  /*1回限り*/
+  animation-delay: 0s;
+  /*読み込んでから2秒後に実行*/
+  animation-fill-mode: forwards;
+  /*実行後キーフレームの設定を維持*/
+  animation-timing-function: ease-in-out;
+  /*徐々に加速して減速する動き方*/
+
+
+}
+
+.anime-object-2 {
+  animation-name: fade-in;
+  /*keyframesと紐づける*/
+  animation-duration: 3s;
+  /*3秒かけて動く*/
+  animation-iteration-count: 1;
+  /*1回限り*/
+  animation-delay: 5s;
+  /*読み込んでから2秒後に実行*/
+  animation-fill-mode: forwards;
+  /*実行後キーフレームの設定を維持*/
+  animation-timing-function: ease-in-out;
+  /*徐々に加速して減速する動き方*/
+
+
+}
+
+
+
+/* アニメーション */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll {
+  display: inline-block;
+  padding-top: 70px;
+  position: relative;
+
+}
+
+.scroll::before {
+  animation: scroll 3.5s infinite;
+  border: solid #000;
+  border-width: 0 0 1px 1px;
+  content: "";
+  display: inline-block;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: rotate(-45deg);
+  width: 20px;
+  height: 20px;
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 1.5s ease 0s 1 normal;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 1.5s, transform 1.5s;
+
+  &.is-animated {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInbottom {
+  animation: fadeInLeft 0.7s ease 0s 1 normal;
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition: opacity 1.5s, transform 1.5s;
+
+  &.is-animated {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* fadeInLeft */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+
+  80% {
+    transform: rotate(-45deg) translate(-30px, 30px);
+  }
+
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
